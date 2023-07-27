@@ -22,11 +22,13 @@ public class FrontSlash : MonoBehaviour
     [SerializeField] Player player;
 
     void OnEnable(){
-        player.OnAttacking += SetAttacking;
+        if (player != null)
+            player.OnAttacking += SetAttacking;
     }
 
     void OnDisable(){
-        player.OnAttacking -= SetAttacking;
+        if (player != null)
+            player.OnAttacking -= SetAttacking;
     }
 
     public void SetAttacking(bool isAttacking){

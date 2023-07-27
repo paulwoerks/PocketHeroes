@@ -22,6 +22,9 @@ public class Player : MonoBehaviour
 
         joystick = new("Movement");
         PlayerAnchor.Provide(transform);
+    }
+
+    void Start(){
         Reset();
     }
 

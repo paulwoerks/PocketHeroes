@@ -16,11 +16,13 @@ public class StompAttack : MonoBehaviour
     [SerializeField] Player player;
 
     void OnEnable(){
-        player.OnAttacking += SetAttacking;
+        if (player != null)
+            player.OnAttacking += SetAttacking;
     }
 
     void OnDisable(){
-        player.OnAttacking -= SetAttacking;
+        if (player != null)
+            player.OnAttacking -= SetAttacking;
     }
 
     public void SetAttacking(bool isAttackMode){
@@ -41,8 +43,8 @@ public class StompAttack : MonoBehaviour
 
     IEnumerator CooldownTimer(){
         while (true){
-            Perform();
             yield return new WaitForSeconds(cooldown);
+            Perform();
         }
     }
 }

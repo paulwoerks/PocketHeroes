@@ -6,6 +6,8 @@ using Toolbox.Pooling;
 public class EnemySpawner : MonoBehaviour{
         [SerializeField] bool debug;
         [SerializeField] GameObject prefab;
+
+        [SerializeField] Transform parent;
         Queue<GameObject> enemies = new();
 
         [SerializeField] TransformAnchor playerAnchor;
@@ -13,23 +15,25 @@ public class EnemySpawner : MonoBehaviour{
         void Update()
         {
             if (Input.GetKeyDown(KeyCode.Space))
-                SpawnCube();
-
-            if (Input.GetKeyDown(KeyCode.O))
-                DespawnCube();
-        }
-        void SpawnCube()
-        {
-            if (!playerAnchor.IsSet)
-                return;
-
-            this.Log("Spawn", debug);
-            Vector3 position = RandomPosition(15) + playerAnchor.Value.position;
-            Quaternion rotation = Quaternion.identity;
-            enemies.Enqueue(Pooler.Spawn(prefab, position + playerAnchor.Value.position, rotation));
+                SpawnGroup(prefab);
         }
 
-        void DespawnCube()
+        void SpawnGroup(GameObject prefab){
+            Vector3 spawnArea = RandomPosition(15) + playerAnchor.Value.position;
+
+            int units = Random.Range(2, 6);
+            float unitDistance = 3f; 
+
+            for (int i = 0; i < units; i++){
+                Vector3 position = RandomPosition(unitDistance, spawnArea);
+                Quaternion rotation = Quaternion.Euler(0, Random.Range(0,360), 0);
+                GameObject enemy = Pooler.Spawn(prefab, position, rotation, parent);
+                enemies.Enqueue(enemy);
+            }
+            
+        }
+
+        void DespawnUnit()
         {
             if (enemies.Count <= 0)
                 return;
@@ -39,6 +43,6 @@ public class EnemySpawner : MonoBehaviour{
             Pooler.Despawn(enemies.Dequeue());
         }
 
-        Vector3 RandomPosition(float range) => new Vector3(Random.Range(-range, range), 0, Random.Range(-range, range));
+        Vector3 RandomPosition(float range, Vector3 center = default) => new Vector3(Random.Range(-range, range), 0, Random.Range(-range, range)) + center;
     }
 
