@@ -62,5 +62,6 @@ sysinfo.txt
 crashlytics-build.properties
 
 # Custom Directions
-Assets/Art/
+Assets/Art/FX/
+Assets/Art/3rd Party/
 Assets/Plugins/3rd Party/

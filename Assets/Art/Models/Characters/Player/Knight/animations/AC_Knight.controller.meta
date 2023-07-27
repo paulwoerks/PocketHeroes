@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f26c912d574caa9498c2b163361c3f6d
+timeCreated: 1482740080
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 79143
+  packageName: Knight animated character
+  packageVersion: 1.0
+  assetPath: Assets/Knight animated character/animations/AC_Knight.controller
+  uploadId: 157967

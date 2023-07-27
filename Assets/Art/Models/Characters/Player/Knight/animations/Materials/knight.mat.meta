@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 299bca2d9552eb9439c78d9eafee4e02
+timeCreated: 1482740182
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 79143
+  packageName: Knight animated character
+  packageVersion: 1.0
+  assetPath: Assets/Knight animated character/animations/Materials/knight.mat
+  uploadId: 157967

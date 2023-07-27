@@ -1,0 +1,379 @@
+fileFormatVersion: 2
+guid: 2440152539611bb408e10512b8e37080
+AssetOrigin:
+  serializedVersion: 1
+  productId: 79143
+  packageName: Knight animated character
+  packageVersion: 1.0
+  assetPath: Assets/Knight animated character/animations/Knight_run.fbx
+  uploadId: 157967
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: arm_L_1
+  - first:
+      1: 100002
+    second: arm_L_2
+  - first:
+      1: 100004
+    second: arm_L_3
+  - first:
+      1: 100006
+    second: arm_R_1
+  - first:
+      1: 100008
+    second: arm_R_2
+  - first:
+      1: 100010
+    second: arm_R_3
+  - first:
+      1: 100012
+    second: body
+  - first:
+      1: 100014
+    second: bones
+  - first:
+      1: 100016
+    second: chest
+  - first:
+      1: 100018
+    second: head
+  - first:
+      1: 100020
+    second: head_up
+  - first:
+      1: 100022
+    second: horse
+  - first:
+      1: 100024
+    second: horse_head
+  - first:
+      1: 100026
+    second: horse_leg_L_back
+  - first:
+      1: 100028
+    second: horse_leg_L_front
+  - first:
+      1: 100030
+    second: horse_leg_R_back
+  - first:
+      1: 100032
+    second: horse_leg_R_front
+  - first:
+      1: 100034
+    second: horse_neck
+  - first:
+      1: 100036
+    second: horse_tail
+  - first:
+      1: 100038
+    second: joint1
+  - first:
+      1: 100040
+    second: Knight
+  - first:
+      1: 100042
+    second: //RootNode
+  - first:
+      1: 100044
+    second: leg_L_1
+  - first:
+      1: 100046
+    second: leg_L_2
+  - first:
+      1: 100048
+    second: leg_L_3
+  - first:
+      1: 100050
+    second: leg_R_1
+  - first:
+      1: 100052
+    second: leg_R_2
+  - first:
+      1: 100054
+    second: leg_R_3
+  - first:
+      4: 400000
+    second: arm_L_1
+  - first:
+      4: 400002
+    second: arm_L_2
+  - first:
+      4: 400004
+    second: arm_L_3
+  - first:
+      4: 400006
+    second: arm_R_1
+  - first:
+      4: 400008
+    second: arm_R_2
+  - first:
+      4: 400010
+    second: arm_R_3
+  - first:
+      4: 400012
+    second: body
+  - first:
+      4: 400014
+    second: bones
+  - first:
+      4: 400016
+    second: chest
+  - first:
+      4: 400018
+    second: head
+  - first:
+      4: 400020
+    second: head_up
+  - first:
+      4: 400022
+    second: horse
+  - first:
+      4: 400024
+    second: horse_head
+  - first:
+      4: 400026
+    second: horse_leg_L_back
+  - first:
+      4: 400028
+    second: horse_leg_L_front
+  - first:
+      4: 400030
+    second: horse_leg_R_back
+  - first:
+      4: 400032
+    second: horse_leg_R_front
+  - first:
+      4: 400034
+    second: horse_neck
+  - first:
+      4: 400036
+    second: horse_tail
+  - first:
+      4: 400038
+    second: joint1
+  - first:
+      4: 400040
+    second: Knight
+  - first:
+      4: 400042
+    second: //RootNode
+  - first:
+      4: 400044
+    second: leg_L_1
+  - first:
+      4: 400046
+    second: leg_L_2
+  - first:
+      4: 400048
+    second: leg_L_3
+  - first:
+      4: 400050
+    second: leg_R_1
+  - first:
+      4: 400052
+    second: leg_R_2
+  - first:
+      4: 400054
+    second: leg_R_3
+  - first:
+      43: 4300000
+    second: Knight
+  - first:
+      74: 7400000
+    second: run
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Knight
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: run
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 1
+      lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bones
+        weight: 1
+      - path: bones/horse
+        weight: 1
+      - path: bones/horse/body
+        weight: 1
+      - path: bones/horse/body/chest
+        weight: 1
+      - path: bones/horse/body/chest/arm_L_1
+        weight: 1
+      - path: bones/horse/body/chest/arm_L_1/arm_L_2
+        weight: 1
+      - path: bones/horse/body/chest/arm_L_1/arm_L_2/arm_L_3
+        weight: 1
+      - path: bones/horse/body/chest/arm_R_1
+        weight: 1
+      - path: bones/horse/body/chest/arm_R_1/arm_R_2
+        weight: 1
+      - path: bones/horse/body/chest/arm_R_1/arm_R_2/arm_R_3
+        weight: 1
+      - path: bones/horse/body/chest/head
+        weight: 1
+      - path: bones/horse/body/chest/head/head_up
+        weight: 1
+      - path: bones/horse/body/leg_L_1
+        weight: 1
+      - path: bones/horse/body/leg_L_1/leg_L_2
+        weight: 1
+      - path: bones/horse/body/leg_L_1/leg_L_2/leg_L_3
+        weight: 1
+      - path: bones/horse/body/leg_R_1
+        weight: 1
+      - path: bones/horse/body/leg_R_1/leg_R_2
+        weight: 1
+      - path: bones/horse/body/leg_R_1/leg_R_2/leg_R_3
+        weight: 1
+      - path: bones/horse/horse_leg_L_back
+        weight: 1
+      - path: bones/horse/horse_leg_L_front
+        weight: 1
+      - path: bones/horse/horse_leg_R_back
+        weight: 1
+      - path: bones/horse/horse_leg_R_front
+        weight: 1
+      - path: bones/horse/horse_neck
+        weight: 1
+      - path: bones/horse/horse_neck/horse_head
+        weight: 1
+      - path: bones/horse/horse_tail
+        weight: 1
+      - path: bones/joint1
+        weight: 1
+      - path: Knight
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

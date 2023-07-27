@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b53f1fc38d9956148a40bded21d8c2c6
+timeCreated: 1482740288
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 79143
+  packageName: Knight animated character
+  packageVersion: 1.0
+  assetPath: Assets/Knight animated character/Knight.prefab
+  uploadId: 157967
