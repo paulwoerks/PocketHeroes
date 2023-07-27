@@ -8,6 +8,8 @@ public class EnemySpawner : MonoBehaviour{
         [SerializeField] GameObject prefab;
         Queue<GameObject> enemies = new();
 
+        [SerializeField] TransformAnchor playerAnchor;
+
         void Update()
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -18,10 +20,13 @@ public class EnemySpawner : MonoBehaviour{
         }
         void SpawnCube()
         {
+            if (!playerAnchor.IsSet)
+                return;
+
             this.Log("Spawn", debug);
-            Vector3 position = RandomPosition(5);
+            Vector3 position = RandomPosition(15) + playerAnchor.Value.position;
             Quaternion rotation = Quaternion.identity;
-            enemies.Enqueue(Pooler.Spawn(prefab, position, rotation));
+            enemies.Enqueue(Pooler.Spawn(prefab, position + playerAnchor.Value.position, rotation));
         }
 
         void DespawnCube()

@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using Toolbox;
+using Toolbox.Pooling;
 
 public class StompAttack : MonoBehaviour
 {
@@ -9,18 +10,29 @@ public class StompAttack : MonoBehaviour
     public float cooldown;
     public float radius;
     
+    [SerializeField] GameObject FX_explosion;
     Coroutine attackRoutine;
 
-    public void Activate(){
-        attackRoutine = StartCoroutine(CooldownTimer());
+    [SerializeField] Player player;
+
+    void OnEnable(){
+        player.OnAttacking += SetAttacking;
     }
 
-    public void Deactivate(){
-        StopCoroutine(attackRoutine);
+    void OnDisable(){
+        player.OnAttacking -= SetAttacking;
+    }
+
+    public void SetAttacking(bool isAttackMode){
+        if (isAttackMode)
+            attackRoutine = StartCoroutine(CooldownTimer());
+        else
+            StopCoroutine(attackRoutine);
     }
 
     void Perform(){
         Transform[] targets = enemies.GetInRange(transform.position, radius);
+        Pooler.Spawn(FX_explosion, transform.position, transform.rotation);
         foreach (Transform target in targets){
             Health targetHealth = target.GetComponent<Health>();
             targetHealth.TakeDamage(damage);

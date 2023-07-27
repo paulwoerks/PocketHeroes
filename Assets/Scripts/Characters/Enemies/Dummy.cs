@@ -1,4 +1,6 @@
 using UnityEngine;
+using System;
+using System.Collections;
 using Toolbox;
 using Toolbox.Pooling;
 
@@ -35,6 +37,7 @@ public class Dummy : MonoBehaviour, ISpawn, IDespawn
     void OnDisable(){
         health.OnDie -= Die;
         health.OnTakeDamage -= TakeDamage;
+        StopAllCoroutines();
     }
     #endregion
 
@@ -65,13 +68,20 @@ public class Dummy : MonoBehaviour, ISpawn, IDespawn
 
     void Die(){
         animator.SetTrigger("Die");
-        Pooler.Despawn(gameObject, 1f);
+        StartCoroutine(DoDie());
     }
     #endregion
 
+    IEnumerator DoDie(){
+        yield return new WaitForSeconds(1.2f);
+        Pooler.Spawn(deathFX, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(.2f);
+        Pooler.Despawn(gameObject);
+
+    }
+
     public void OnDespawn(){
         DropLoot();
-        Pooler.Spawn(deathFX, transform.position, Quaternion.identity);
     }
 
     void DropLoot(){

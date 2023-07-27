@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 525cd1a664407ed43a6bd81bda4dad3c
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 27695
+  packageName: Ultimate Joystick
+  packageVersion: 3.2.1
+  assetPath: Assets/Tank & Healer Studio/Ultimate Joystick/Scripts/UltimateJoystick.cs
+  uploadId: 552382

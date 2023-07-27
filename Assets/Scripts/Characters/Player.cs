@@ -1,5 +1,6 @@
 using UnityEngine;
 using Toolbox;
+using System;
 
 public class Player : MonoBehaviour
 {
@@ -9,9 +10,9 @@ public class Player : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] GameObject audioC;
 
+    public Action<bool> OnAttacking;
+
     [Header("Components")]
-    [SerializeField] StompAttack stompAttack;
-    [SerializeField] FrontSlash slashAttack;
     [SerializeField] TransformAnchor PlayerAnchor;
     Health health;
     public bool IsMoving => joystick.IsPressed && !health.IsDead;
@@ -77,13 +78,11 @@ public class Player : MonoBehaviour
     void Die(){
         anim?.SetTrigger("Die");
         PlayerAnchor.Unset();
-        stompAttack?.Deactivate();
-        slashAttack?.Deactivate();
+        OnAttacking?.Invoke(false);
     }
 
     void Reset(){
         health.Reset();
-        stompAttack?.Activate();
-        slashAttack?.Activate();
+        OnAttacking?.Invoke(true);
     }
 }

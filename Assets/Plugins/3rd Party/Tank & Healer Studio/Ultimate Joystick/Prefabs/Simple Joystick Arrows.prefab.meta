@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8b1a5b90b9ea589409418d098c0ad5a1
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 27695
+  packageName: Ultimate Joystick
+  packageVersion: 3.2.1
+  assetPath: Assets/Tank & Healer Studio/Ultimate Joystick/Prefabs/Simple Joystick
+    Arrows.prefab
+  uploadId: 552382

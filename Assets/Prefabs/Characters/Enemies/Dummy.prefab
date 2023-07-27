@@ -50,6 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   rotationSpeed: 1
+  deathFX: {fileID: 3319141735276072136, guid: 7e376cc382ee2de4f89e9ce73780a3ea, type: 3}
+  coin: {fileID: 3319141735276072136, guid: 7e376cc382ee2de4f89e9ce73780a3ea, type: 3}
   PlayerAnchor: {fileID: 11400000, guid: bba6c042b08ad2046b172d4933d91d02, type: 2}
   animator: {fileID: 6624712291293634071}
 --- !u!114 &8643583977433778895
@@ -127,7 +129,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -184,7 +186,6 @@ MonoBehaviour:
   flashColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
   health: {fileID: 8643583977433778895}
   rend: {fileID: 6624712291297878231}
-  originalEmissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1001 &435418308708048873
 PrefabInstance:
   m_ObjectHideFlags: 0

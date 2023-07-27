@@ -21,10 +21,12 @@ public class DamageBlink : MonoBehaviour
 
     void OnEnable(){
         health.OnTakeDamage += StartBlink;
+        health.OnDie += StartBlink;
     }
 
     void OnDisable(){
         health.OnTakeDamage -= StartBlink;
+        health.OnDie -= StartBlink;
         if (DoBlink != null){
             StopCoroutine(DoBlink);
             Stop();

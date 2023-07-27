@@ -17,43 +17,33 @@ public class FrontSlash : MonoBehaviour
 
     [SerializeField] GameObject VFX;
 
-    public void Activate(){
-        attackRoutine = StartCoroutine(CooldownTimer());
+    List<GameObject> inRange = new();
+
+    [SerializeField] Player player;
+
+    void OnEnable(){
+        player.OnAttacking += SetAttacking;
     }
 
-    public void Deactivate(){
-        StopCoroutine(attackRoutine);
+    void OnDisable(){
+        player.OnAttacking -= SetAttacking;
+    }
+
+    public void SetAttacking(bool isAttacking){
+        if (isAttacking)
+            attackRoutine = StartCoroutine(CooldownTimer());
+        else
+            StopCoroutine(attackRoutine);
     }
 
     Vector3 attackBoxSize = new Vector3(5f, 5f, 10f);
     void Perform(){
         // Spawn thing;
         Pooler.Spawn(VFX, transform.position, transform.rotation);
-        List<Health> enemies = GetEnemiesInBox();
-        foreach (Health health in enemies){
-            health.TakeDamage(damage);
+
+        foreach (GameObject enemy in inRange){
+            enemy.GetComponent<Health>().TakeDamage(damage);
         }
-    }
-
-    public List<Health> GetEnemiesInBox() {
-        List<Health> hitEnemies = new List<Health>();
-
-        // Mittelpunkt der Box
-        Vector3 boxCenter = transform.position + transform.forward * attackBoxSize.z / 2;
-
-        // BoxCast ausführen
-        RaycastHit[] hits = Physics.BoxCastAll(boxCenter, attackBoxSize / 2, transform.forward, transform.rotation, attackBoxSize.z, enemyLayer);
-        foreach (RaycastHit hit in hits) {
-            // Überprüfen, ob das getroffene Objekt eine Health-Komponente hat
-            Health health = hit.transform.GetComponent<Health>();
-            if (health != null) {
-                hitEnemies.Add(health);
-            }
-        }
-
-        //OnDrawGizmos();
-
-        return hitEnemies;
     }
 
 
@@ -71,6 +61,18 @@ public class FrontSlash : MonoBehaviour
             animator.Play("Attack_Slash");
             yield return new WaitForSeconds(animationDelay);
             Perform();
+        }
+    }
+
+    void OnTriggerEnter(Collider other){
+        if (other.gameObject.layer.Equals(enemyLayer)){
+            inRange.Add(other.gameObject);
+        }
+    }
+
+    void OnTriggerExit(Collider other){
+        if (other.gameObject.layer.Equals(enemyLayer)){
+            inRange.Remove(other.gameObject);
         }
     }
 }
