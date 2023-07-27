@@ -1,0 +1,17 @@
+Toolbox.Pooling
+
+--- WHAT IT DOES ---
+Creating and Destroying GameObjects over and over again will slow down your game during runtime, because each object will fill up your RAM. Object Pooling reuses "unused" instances of an object by deactivating them instead of destroying them and reactivating them instead of creating new ones.
+
+--- HOW TO USE ---
+1. Add a GameObject to your scene and attach the "Pooler.cs".
+2. Spawn GameObjects by using the following code:
+	Pooler.Spawn(gameObjectToSpawn, position, rotation);
+3. Spawned Objects can't use the Start/Awake/OnDestroy functions every time they are spawned/despawned since they are just deactivated and reactivated. Instead use the Interface ISpawn and IDespawn to trigger behaviour there.
+	ExampleClass : ISpawn, IDespawn {
+		void OnSpawn { ... Do Stuff }
+		void OnDespawn { ... Do Stuff }
+}
+
+
+Author: Paul Woerner, info@paulwoerner.com

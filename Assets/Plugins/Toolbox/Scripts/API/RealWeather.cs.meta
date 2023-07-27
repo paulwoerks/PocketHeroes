@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: a0c618fd7f9cb5343bc14d935f6e8098
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - OnWeatherUpdated: {fileID: 11400000, guid: 3002bd9cf5b060a4eade52e1de1fd9e9, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 65b15f01718d00941bcafd15b0aa9830
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - RealTime: {fileID: 11400000, guid: 23007939aa4556043901458131ecc48f, type: 2}
+  - SessionEnded: {fileID: 11400000, guid: c19b9a67bd1eadf46a777967e93e51b5, type: 2}
+  - OnTimeSet: {fileID: 11400000, guid: fbc9aefb9fad2574e9c21365f6627e9c, type: 2}
+  - OnNewDay: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
