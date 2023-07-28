@@ -60,7 +60,7 @@ namespace Toolbox.Loot
 
         void ReceiveOfflineMinings()
         {
-            double minutesPassed = (RealTime.AFKTime).TotalMinutes;
+            double minutesPassed = (RealTime.RealTime.AFKTime).TotalMinutes;
             foreach (Mine mine in mines)
             {
                 double amountMined = minutesPassed * mine.generatePerMinute;

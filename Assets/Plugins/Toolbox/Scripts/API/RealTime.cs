@@ -10,7 +10,7 @@ using Toolbox.Events;
 using Toolbox.Singleton;
 
 // Author: Paul Woerner
-namespace Toolbox.Time
+namespace Toolbox.RealTime
 {
     /// <summary>Provides the Real Time over the Internet if possible with just 1 API Call on Start</summary>
     public class RealTime : Singleton<RealTime>

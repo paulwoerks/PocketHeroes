@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using Toolbox.Data;
-using Toolbox.Time;
+using Toolbox.RealTime;
 using Toolbox.Events;
 using TMPro;
 
@@ -47,7 +47,7 @@ namespace Toolbox.Loot
 
         void GetAFKMining()
         {
-            int offlineEarnings = (int)(RealTime.AFKTime).TotalSeconds * earnAmount; // 1 Coin per Second
+            int offlineEarnings = (int)(RealTime.RealTime.AFKTime).TotalSeconds * earnAmount; // 1 Coin per Second
             Add(offlineEarnings);
         }
 

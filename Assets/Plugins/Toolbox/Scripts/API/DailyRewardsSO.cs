@@ -2,7 +2,7 @@ using Toolbox.Events;
 using Toolbox.Data;
 using UnityEngine;
 
-namespace Toolbox.Time
+namespace Toolbox.RealTime
 {
     [CreateAssetMenu(fileName = "DailyRewards", menuName = "Time/Daily Rewards", order = 0)]
     /// Checks for Daily Rewards
