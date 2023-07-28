@@ -7,8 +7,6 @@ using Pathfinding;
 public class Dummy : MonoBehaviour, ISpawn, IDespawn
 {
     [SerializeField] float moveSpeed = 3f;
-    [SerializeField] float rotationSpeed = 1f;
-
     [SerializeField] GameObject deathFX;
     [SerializeField] GameObject coin;
 
@@ -52,9 +50,7 @@ public class Dummy : MonoBehaviour, ISpawn, IDespawn
     #endregion
 
     void SetAIdestination(){
-        Debug.Log("TryUpdate");
         if (target.IsSet && ai != null){
-            Debug.Log("Update!");
             ai.destination = Player.position;
         }
     }
@@ -66,8 +62,10 @@ public class Dummy : MonoBehaviour, ISpawn, IDespawn
     }
 
     #region Health
-    void TakeDamage(){
-        animator.SetTrigger("TakeDamage");
+    void TakeDamage(int damage){
+        if (!health.IsDead){
+            animator.SetTrigger("TakeDamage");
+        }
     }
 
     void Die(){

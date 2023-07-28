@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using Toolbox;
+using Toolbox.Pooling;
 
 public class Health : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class Health : MonoBehaviour
     public bool IsDead => hp <= 0;
 
     public Action OnDie;
-    public Action OnTakeDamage;
+    public Action<int> OnTakeDamage;
 
     public void Start(){
         Reset();
@@ -27,13 +28,10 @@ public class Health : MonoBehaviour
         this.Log("Damage Taken.", debug);
         hp -= damage;
 
-        if (!IsDead){
-            OnTakeDamage?.Invoke();
-            this.Log("OnTakeDamage!", debug);
-        } 
+        OnTakeDamage?.Invoke(damage);
 
         // Is Dead
-        else {
+        if (IsDead) {
             hp = 0;
             OnDie?.Invoke();
             return;

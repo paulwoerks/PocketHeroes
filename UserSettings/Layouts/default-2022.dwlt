@@ -120,8 +120,8 @@ MonoBehaviour:
     y: 0
     width: 255
     height: 536.5
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 60
+  controlID: 58
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 50}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 61
+  controlID: 59
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -296,8 +296,8 @@ MonoBehaviour:
     y: 0
     width: 636.5
     height: 536.5
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -1507,7 +1507,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Plugins/3rd Party/AstarPathfindingProject
+    - Assets/Plugins/3rd Party
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1515,16 +1515,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Plugins/3rd Party/AstarPathfindingProject
+  - Assets/Plugins/3rd Party
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Projects\Games\PocketHeroes
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 717.5}
-    m_SelectedIDs: 48f00000
-    m_LastClickedID: 61512
-    m_ExpandedIDs: 00000000f27b0000f47b0000f67b0000f87b0000fa7b0000be7c0000cc7c0000ce7c0000d27c0000007d0000107d0000167d0000187d00001c7d0000207d0000267d0000287d0000347d00009e800000a6800000f48b000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 61.5}
+    m_SelectedIDs: bc7e0000
+    m_LastClickedID: 32444
+    m_ExpandedIDs: 00000000b87d0000ba7d0000bc7d0000be7d0000c07d0000907e0000967e0000ba7e0000bc7e0000cc7e0000d47e0000d07f0000ea7f000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1552,7 +1552,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f27b0000f47b0000f67b0000f87b0000fa7b0000
+    m_ExpandedIDs: 00000000b87d0000ba7d0000bc7d0000be7d0000c07d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1583,18 +1583,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c6230000aeae000044ac00009eae000074d500007ed50000cc800000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: JoystickReader
-      m_OriginalName: JoystickReader
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 7920
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 6}
     m_CreateAssetUtility:
@@ -1604,7 +1604,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 152.5}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
@@ -1649,7 +1649,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 54
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -1692,9 +1692,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 48f00000
+      m_SelectedIDs: bc7e0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 6001feff7cf8ffff86f8ffff0afbffffac7400000c750000
+      m_ExpandedIDs: 5c1cf1ff7c1ff1ffc03af1ff284af1ffc84af1ffea4df1ff8a4ef1ff3e50f1ffcc89f5fffa89f5ff3288f8ff1ee7fcff4c46ffff0afbfffff07500000a7600003076000070760000a20001001a010100561401007c1401008a140100b2140100c6140100da140100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -2100,7 +2100,7 @@ MonoBehaviour:
       id: UnityEditor.SceneViewCameraOverlay
       index: 10
       layout: 4
-      size: {x: 240, y: 135}
+      size: {x: 0, y: 0}
       sizeOverriden: 0
     m_OverlaysVisible: 1
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
@@ -2113,9 +2113,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -3.4212291, y: -12.379179, z: 8.150038}
+    m_Target: {x: 16.297083, y: 9.9969425, z: -6.6544952}
     speed: 2
-    m_Value: {x: -3.4212291, y: -12.379179, z: 8.150038}
+    m_Value: {x: 16.297089, y: 9.996946, z: -6.654489}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -2161,13 +2161,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.41897768, y: -0.0016050714, z: 0.0007479419, w: -0.9080186}
+    m_Target: {x: 0.14306915, y: -0.8060923, z: 0.21686062, w: 0.5317687}
     speed: 2
-    m_Value: {x: -0.41896865, y: -0.0016050368, z: 0.0007479258, w: -0.907999}
+    m_Value: {x: 0.14241366, y: -0.8076598, z: 0.21728235, w: 0.52933216}
   m_Size:
-    m_Target: 29.771631
+    m_Target: 2.4932964
     speed: 2
-    m_Value: 29.771631
+    m_Value: 2.4932964
   m_Ortho:
     m_Target: 0
     speed: 2

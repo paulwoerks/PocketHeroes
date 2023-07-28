@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 22411329651142925}
   - component: {fileID: 8568014355668313708}
   - component: {fileID: 1831262793991266007}
+  - component: {fileID: 7555902252004284269}
   m_Layer: 6
   m_Name: Dummy
   m_TagString: Enemy
@@ -53,7 +54,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  rotationSpeed: 1
   deathFX: {fileID: 3319141735276072136, guid: 7e376cc382ee2de4f89e9ce73780a3ea, type: 3}
   coin: {fileID: 3319141735276072136, guid: 7e376cc382ee2de4f89e9ce73780a3ea, type: 3}
   target: {fileID: 11400000, guid: bba6c042b08ad2046b172d4933d91d02, type: 2}
@@ -233,6 +233,20 @@ MonoBehaviour:
   wallAvoidFalloff: 1
   priority: 0.5
   debug: 0
+--- !u!114 &7555902252004284269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4080276591393083417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d795e77503e3c4f88d6755c30277c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 8643583977433778895}
+  prefabFX: {fileID: 2780415929796938626, guid: 71890e71b5ce854489e136aab771a361, type: 3}
 --- !u!1 &6458539886499096374
 GameObject:
   m_ObjectHideFlags: 0
