@@ -76,9 +76,8 @@ public class Dummy : MonoBehaviour, ISpawn, IDespawn
     #endregion
 
     IEnumerator DoDie(){
-        yield return new WaitForSeconds(1.5f);
         Pooler.Spawn(deathFX, transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(.35f);
+        yield return new WaitForSeconds(.2f);
         Pooler.Despawn(gameObject);
 
     }

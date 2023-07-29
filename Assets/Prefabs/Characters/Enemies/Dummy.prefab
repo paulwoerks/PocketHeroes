@@ -39,6 +39,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 21897872389736732}
+  - {fileID: 4764008055685427973}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &867273403687754400
@@ -54,8 +55,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  deathFX: {fileID: 3319141735276072136, guid: 7e376cc382ee2de4f89e9ce73780a3ea, type: 3}
-  coin: {fileID: 3319141735276072136, guid: 7e376cc382ee2de4f89e9ce73780a3ea, type: 3}
+  deathFX: {fileID: 1779529582435832835, guid: 387eb780143885141af648086648e03f, type: 3}
+  coin: {fileID: 4091947844307468653, guid: 545ac6e08b522c940a9b192714770bac, type: 3}
   target: {fileID: 11400000, guid: bba6c042b08ad2046b172d4933d91d02, type: 2}
   animator: {fileID: 6624712291293634071}
 --- !u!114 &8643583977433778895
@@ -172,7 +173,7 @@ Rigidbody:
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -247,6 +248,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 8643583977433778895}
   prefabFX: {fileID: 2780415929796938626, guid: 71890e71b5ce854489e136aab771a361, type: 3}
+--- !u!1 &4354301667545794929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4764008055685427973}
+  - component: {fileID: 946745434453423992}
+  m_Layer: 6
+  m_Name: Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4764008055685427973
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354301667545794929}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7252778383947641456}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &946745434453423992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354301667545794929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a9859a21071efd4bbe4d12daa0a095c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  attackRange: 0.5
+  cooldown: 2
+  playerAnchor: {fileID: 11400000, guid: bba6c042b08ad2046b172d4933d91d02, type: 2}
 --- !u!1 &6458539886499096374
 GameObject:
   m_ObjectHideFlags: 0

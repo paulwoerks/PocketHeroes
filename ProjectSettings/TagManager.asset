@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - FxTemporaire
+  - FX
+  - World
+  - Target
   layers:
   - Default
   - TransparentFX
@@ -15,7 +18,7 @@ TagManager:
   - UI
   - Enemies
   - Obstacles
-  - 
+  - Walkable
   - 
   - 
   - 

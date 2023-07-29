@@ -3,7 +3,7 @@ using UnityEngine;
 using Toolbox;
 using Toolbox.Pooling;
 
-public class StompAttack : MonoBehaviour
+public class ArealAttack : MonoBehaviour
 {
     public TransformGroup enemies;
     public int damage;
