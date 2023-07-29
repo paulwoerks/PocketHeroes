@@ -1,5 +1,6 @@
 using UnityEngine;
 using Toolbox;
+using Toolbox.Events;
 using System;
 
 public class Player : MonoBehaviour
@@ -11,6 +12,9 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject audioC;
 
     public Action<bool> OnAttacking;
+
+    [Header("Broadcasting on ...")]
+    [SerializeField] VoidChannelSO OnGameOver;
 
     [Header("Components")]
     [SerializeField] TransformAnchor PlayerAnchor;
@@ -82,6 +86,7 @@ public class Player : MonoBehaviour
         anim?.SetTrigger("Die");
         PlayerAnchor.Unset();
         OnAttacking?.Invoke(false);
+        OnGameOver.Invoke();
     }
 
     void Reset(){

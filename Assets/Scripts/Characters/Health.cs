@@ -9,17 +9,23 @@ public class Health : MonoBehaviour
     [SerializeField] int maxHP;
     [SerializeField] int hp;
     public int HP => hp;
+    public int HPmax => maxHP;
 
     public bool IsDead => hp <= 0;
 
     public Action OnDie;
     public Action<int> OnTakeDamage;
 
+    public Action OnUpdateHealth;
+
     public void Start(){
         Reset();
     }
 
-    public void Reset() => hp = maxHP;
+    public void Reset(){
+        hp = maxHP;
+        OnUpdateHealth?.Invoke();          
+    } 
 
     public void TakeDamage(int damage){
         if (damage <= 0 || IsDead)
@@ -29,7 +35,7 @@ public class Health : MonoBehaviour
         hp -= damage;
 
         OnTakeDamage?.Invoke(damage);
-
+        OnUpdateHealth?.Invoke();
         // Is Dead
         if (IsDead) {
             hp = 0;
