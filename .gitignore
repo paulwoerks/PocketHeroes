@@ -62,9 +62,7 @@ sysinfo.txt
 crashlytics-build.properties
 
 # Custom Directions
-#Assets/Art/3rd Party/FX/
-Assets/Art/3rd Party/FX/Cartoon FX/
-#Assets/Art/3rd Party/FX/EffectCore/
-Assets/Art/3rd Party/FX/RPG VFX/
-#Assets/Art/3rd Party/FX/VFX_Klaus/
+Assets/Art/3rd Party/UI/
 Assets/Art/3rd Party/Models/
+Assets/Art/3rd Party/FX/Cartoon FX/
+Assets/Art/3rd Party/FX/RPG VFX/
