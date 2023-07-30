@@ -3,21 +3,15 @@ using Toolbox;
 using Toolbox.Events;
 using System;
 
-public class Player : MonoBehaviour
-{
+public class Player : MonoBehaviour {
     public float moveSpeed = 3f;
     public float rotationSpeed = 5f;
     JoystickReader joystick;
     [SerializeField] Animator anim;
-    [SerializeField] GameObject audioC;
-
-    public Action<bool> OnAttacking;
-
-    [Header("Broadcasting on ...")]
-    [SerializeField] VoidChannelSO OnGameOver;
-
-    [Header("Components")]
     [SerializeField] TransformAnchor PlayerAnchor;
+    public Action<bool> OnAttacking;
+    [Header("Broadcasting on ...")]
+    [SerializeField] VoidChannelSO OnPlayerDie;
     Health health;
     public bool IsMoving => joystick.IsPressed && !health.IsDead;
 
@@ -67,7 +61,6 @@ public class Player : MonoBehaviour
             * Time.deltaTime;
 
         anim?.SetBool("isMoving", IsMoving);
-        audioC.SetActive(IsMoving);
     }
 
     void Rotate(){
@@ -86,7 +79,7 @@ public class Player : MonoBehaviour
         anim?.SetTrigger("Die");
         PlayerAnchor.Unset();
         OnAttacking?.Invoke(false);
-        OnGameOver.Invoke();
+        OnPlayerDie.Invoke();
     }
 
     void Reset(){

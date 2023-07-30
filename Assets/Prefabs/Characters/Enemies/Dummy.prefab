@@ -59,6 +59,7 @@ MonoBehaviour:
   coin: {fileID: 4091947844307468653, guid: 545ac6e08b522c940a9b192714770bac, type: 3}
   target: {fileID: 11400000, guid: bba6c042b08ad2046b172d4933d91d02, type: 2}
   animator: {fileID: 6624712291293634071}
+  gameStatistics: {fileID: 11400000, guid: 17acdd7bb66e98f42b1bcbdc1369b980, type: 2}
 --- !u!114 &8643583977433778895
 MonoBehaviour:
   m_ObjectHideFlags: 0

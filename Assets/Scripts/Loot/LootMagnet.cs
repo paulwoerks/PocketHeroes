@@ -7,14 +7,16 @@ using Toolbox.Events;
 
 public class LootMagnet : MonoBehaviour
 {
+    [SerializeField] bool debug;
     [SerializeField] float force;
     [SerializeField] float magnetRange;
     float collectionDistance = 0.5f;
 
-    [SerializeField] IntChannelSO OnGetCollected;
-
     [SerializeField] TransformGroup unmagnetized;
     [SerializeField] List<Transform> magnetized = new List<Transform>();
+
+    [Header("Broadcasting on ...")]
+    [SerializeField] IntChannelSO OnGetCollected;
 
     void OnEnable(){
         StartCoroutine(Scan());
@@ -56,12 +58,13 @@ public class LootMagnet : MonoBehaviour
         foreach (Transform loot in magnetized){
             if (Vector3.Distance(transform.position, loot.position) <= collectionDistance){
                 collected.Add(loot);
-
+                this.Log("Add Coin", debug);
                 OnGetCollected.Invoke(1);
 
                 Pooler.Despawn(loot.gameObject);
             }
         }
+
         foreach (Transform loot in collected){
             magnetized.Remove(loot);
         }

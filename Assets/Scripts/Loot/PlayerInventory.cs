@@ -2,7 +2,7 @@ using UnityEngine;
 using Toolbox;
 using Toolbox.Events;
 
-[CreateAssetMenu(fileName = "Player Inventory", menuName = "Loot/Inventory/Player Inventory", order = 2)]
+[CreateAssetMenu(fileName = "PlayerInventorySO", menuName = "Loot/Inventory/Player Inventory")]
 public class PlayerInventory : SO
 {
     [SerializeField] int coins;
@@ -32,5 +32,6 @@ public class PlayerInventory : SO
 
     void Reset(){
         coins = 0;
+        OnUpdateCoins?.Invoke(coins);
     }
 }

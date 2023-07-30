@@ -1,27 +1,19 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
-using Toolbox.Events;
-
-public class GameOverUI : MonoBehaviour
+using TMPro;
+public class GameOverUI : EventBasedUI
 {
-    [SerializeField] GameObject ui;
+    [SerializeField] TextMeshProUGUI textMesh;
 
-    [Header("Listening to ...")]
-    [SerializeField] VoidChannelSO OnGameOver;
+    [Header("References")]
+    [SerializeField] GameStatistics statistics;
 
-    void OnEnable() => OnGameOver.Subscribe(SetActive, this);
-    void OnDisable() => OnGameOver.Unsubscribe(SetActive, this);
-    void SetActive(){
-        StartCoroutine(ScreenDelay());
-    }
-
-    IEnumerator ScreenDelay(){
-        yield return new WaitForSeconds(1);
-        ui.SetActive(true);
+    public override void Show(){
+        base.Show();
+        textMesh.SetText(statistics.TotalKilled.ToString());
     }
 
     public void Restart(){
-        SceneManager.LoadScene(0);
+        SceneManager.LoadSceneAsync(0);
     }
 }

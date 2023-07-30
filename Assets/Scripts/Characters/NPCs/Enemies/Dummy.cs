@@ -2,14 +2,14 @@ using UnityEngine;
 using System.Collections;
 using Toolbox;
 using Toolbox.Pooling;
+using Toolbox.Events;
 using Pathfinding;
 
-public class Dummy : MonoBehaviour, ISpawn, IDespawn
+public class Dummy : MonoBehaviour, ISpawn
 {
     [SerializeField] float moveSpeed = 3f;
     [SerializeField] GameObject deathFX;
     [SerializeField] GameObject coin;
-
     // Checks
     public bool IsMoving => target.IsSet && !health.IsDead;
 
@@ -17,6 +17,8 @@ public class Dummy : MonoBehaviour, ISpawn, IDespawn
     [SerializeField] TransformAnchor target;
     Transform Player => target.Value;
     [SerializeField] Animator animator;
+
+    [SerializeField] GameStatistics gameStatistics;
 
     IAstarAI ai;
     Health health;
@@ -79,10 +81,7 @@ public class Dummy : MonoBehaviour, ISpawn, IDespawn
         Pooler.Spawn(deathFX, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(.2f);
         Pooler.Despawn(gameObject);
-
-    }
-
-    public void OnDespawn(){
+        gameStatistics.OnKill();
         DropLoot();
     }
 

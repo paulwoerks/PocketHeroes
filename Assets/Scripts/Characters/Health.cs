@@ -15,7 +15,6 @@ public class Health : MonoBehaviour
 
     public Action OnDie;
     public Action<int> OnTakeDamage;
-
     public Action OnUpdateHealth;
 
     public void Start(){
@@ -24,7 +23,7 @@ public class Health : MonoBehaviour
 
     public void Reset(){
         hp = maxHP;
-        OnUpdateHealth?.Invoke();          
+        OnUpdateHealth?.Invoke();     
     } 
 
     public void TakeDamage(int damage){
