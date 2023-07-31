@@ -1,7 +1,7 @@
 using UnityEngine;
 using Toolbox;
 
-[CreateAssetMenu(fileName = "GameStatisticsSO", menuName = "Game/Statistics", order = 2)]
+[CreateAssetMenu(fileName = "GameStatisticsSO", menuName = "Game/Statistics")]
 public class GameStatistics : SO
 {
     [SerializeField] int killedTotal;

@@ -5,56 +5,50 @@ using Toolbox.Pooling;
 using Toolbox.Events;
 using Pathfinding;
 
-public class Dummy : MonoBehaviour, ISpawn
-{
-    [SerializeField] float moveSpeed = 3f;
+public class Dummy : Character, ISpawn {
     [SerializeField] GameObject deathFX;
     [SerializeField] GameObject coin;
     // Checks
-    public bool IsMoving => target.IsSet && !health.IsDead;
+    public bool IsMoving => target.IsSet && !damagable.IsDead;
 
     [Header("Components")]
     [SerializeField] TransformAnchor target;
-    Transform Player => target.Value;
-    [SerializeField] Animator animator;
-
-    [SerializeField] GameStatistics gameStatistics;
+    Transform Target => target.Value;
 
     IAstarAI ai;
-    Health health;
 
     #region Initialize
-    void Awake(){
+    public override void Awake(){
+        base.Awake();
         ai = GetComponent<IAstarAI>();
-        health = GetComponent<Health>();
+        ai.maxSpeed = MoveSpeed;
     }
 
     public void OnSpawn(){
-        health.Reset();
-        ai.canMove = true;
-        ai.maxSpeed = moveSpeed;
+        Reset();
     }
 
-    void OnEnable(){
-        health.OnDie += Die;
-        health.OnTakeDamage += TakeDamage;
+    public override void Reset()
+    {
+        base.Reset();
+        ai.canMove = true;
+    }
 
+    public override void OnEnable(){
+        base.OnEnable();
         if (ai != null) ai.onSearchPath += SetAIdestination;
     }
 
-    void OnDisable(){
-        health.OnDie -= Die;
-        health.OnTakeDamage -= TakeDamage;
-        StopAllCoroutines();
-
-        if (ai != null) ai.onSearchPath -= SetAIdestination;
+    public override void OnDisable(){
+        base.OnEnable();
+        if (ai != null) 
+            ai.onSearchPath -= SetAIdestination;
     }
     #endregion
 
     void SetAIdestination(){
-        if (target.IsSet && ai != null){
-            ai.destination = Player.position;
-        }
+        if (target.IsSet && ai != null)
+            ai.destination = Target.position;
     }
 
     void Update()
@@ -64,14 +58,9 @@ public class Dummy : MonoBehaviour, ISpawn
     }
 
     #region Health
-    void TakeDamage(int damage){
-        if (!health.IsDead){
-            animator.SetTrigger("TakeDamage");
-        }
-    }
 
-    void Die(){
-        animator.SetTrigger("Die");
+    public override void Die(){
+        base.Die();
         ai.canMove = false;
         StartCoroutine(DoDie());
     }
@@ -81,7 +70,7 @@ public class Dummy : MonoBehaviour, ISpawn
         Pooler.Spawn(deathFX, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(.2f);
         Pooler.Despawn(gameObject);
-        gameStatistics.OnKill();
+        statistics.OnKill();
         DropLoot();
     }
 

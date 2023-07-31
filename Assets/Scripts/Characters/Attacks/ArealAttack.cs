@@ -36,7 +36,7 @@ public class ArealAttack : MonoBehaviour
         Transform[] targets = enemies.GetInRange(transform.position, radius);
         Pooler.Spawn(FX_explosion, transform.position, transform.rotation);
         foreach (Transform target in targets){
-            Health targetHealth = target.GetComponent<Health>();
+            Damagable targetHealth = target.GetComponent<Damagable>();
             targetHealth.TakeDamage(damage);
         }
     }

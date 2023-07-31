@@ -3783,11 +3783,11 @@ GameObject:
   - component: {fileID: 403487633}
   - component: {fileID: 403487634}
   - component: {fileID: 403487635}
-  - component: {fileID: 403487637}
-  - component: {fileID: 403487636}
+  - component: {fileID: 403487640}
   - component: {fileID: 403487639}
   - component: {fileID: 403487638}
-  - component: {fileID: 403487640}
+  - component: {fileID: 403487637}
+  - component: {fileID: 403487636}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3824,9 +3824,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 938962509ee099c43ac10d97d279efe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  BaseStats: {fileID: 11400000, guid: 703f36ce1dcf3784eaca80a22d0ef3cc, type: 2}
+  statistics: {fileID: 11400000, guid: 17acdd7bb66e98f42b1bcbdc1369b980, type: 2}
+  damagable: {fileID: 403487635}
+  animator: {fileID: 1288025563}
   rotationSpeed: 6
-  anim: {fileID: 1288025563}
   PlayerAnchor: {fileID: 11400000, guid: bba6c042b08ad2046b172d4933d91d02, type: 2}
   OnPlayerDie: {fileID: 11400000, guid: 39cec6ca044cd7f42a8a275dbb2de60a, type: 2}
 --- !u!114 &403487635
@@ -3842,8 +3844,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
-  maxHP: 5
-  hp: 5
 --- !u!136 &403487636
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3936,7 +3936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90b68e787f862d44ab82b24c892d871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 1
+  debug: 0
   force: 30
   magnetRange: 5
   unmagnetized: {fileID: 11400000, guid: 9815035c4a81b6b4588eda83c06614b0, type: 2}
@@ -4304,7 +4304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 60, y: 60, z: -60}
+  m_FollowOffset: {x: 80, y: 80, z: -80}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -4805,7 +4805,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1497074237}
   m_FillRect: {fileID: 1130544303}
   m_HandleRect: {fileID: 1497074236}
@@ -6017,8 +6017,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.27984816, y: -0.3647052, z: 0.1159169, w: 0.88047624}
-  m_LocalPosition: {x: 48.325516, y: 51.12786, z: -72.674484}
+  m_LocalRotation: {x: 0.27984813, y: -0.36470523, z: 0.11591689, w: 0.8804763}
+  m_LocalPosition: {x: 68.325516, y: 71.12786, z: -92.674484}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6414,8 +6414,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1074740893}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.27984816, y: -0.3647052, z: 0.1159169, w: 0.88047624}
-  m_LocalPosition: {x: 48.325516, y: 51.12786, z: -72.674484}
+  m_LocalRotation: {x: 0.27984813, y: -0.36470523, z: 0.11591689, w: 0.8804763}
+  m_LocalPosition: {x: 68.325516, y: 71.12786, z: -92.674484}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6661,7 +6661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12608,6 +12608,7 @@ MonoBehaviour:
   spawner: {fileID: 1664160577}
   prefab: {fileID: 4080276591393083417, guid: 1e7dfa8d9d4e5164a91cc217bc117fa8, type: 3}
   waveTime: 20
+  spawnInterval: 1.5
   OnStartWave: {fileID: 11400000, guid: a2eb5bcdf837d2243a2be4433bbe9bae, type: 2}
   OnWaveEnd: {fileID: 11400000, guid: 5fdead337b23d46468ad3c8a1db32a55, type: 2}
 --- !u!1 &1660165116
@@ -13616,7 +13617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114124628316905110, guid: ee250115b6588924fae658dd8db790f6, type: 3}
       propertyPath: positionVertical
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114124628316905110, guid: ee250115b6588924fae658dd8db790f6, type: 3}
       propertyPath: dynamicPositioning
@@ -13676,7 +13677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224575833377848682, guid: ee250115b6588924fae658dd8db790f6, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1260.8491
+      value: 1260.793
       objectReference: {fileID: 0}
     - target: {fileID: 224575833377848682, guid: ee250115b6588924fae658dd8db790f6, type: 3}
       propertyPath: m_LocalScale.x
@@ -13724,7 +13725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224575833377848682, guid: ee250115b6588924fae658dd8db790f6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 630.42456
+      value: 630.3965
       objectReference: {fileID: 0}
     - target: {fileID: 224575833377848682, guid: ee250115b6588924fae658dd8db790f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13740,11 +13741,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224799044942441028, guid: ee250115b6588924fae658dd8db790f6, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 504.33966
+      value: 504.3172
       objectReference: {fileID: 0}
     - target: {fileID: 224799044942441028, guid: ee250115b6588924fae658dd8db790f6, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 504.33966
+      value: 504.3172
       objectReference: {fileID: 0}
     - target: {fileID: 224799044942441028, guid: ee250115b6588924fae658dd8db790f6, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -13752,7 +13753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224799044942441028, guid: ee250115b6588924fae658dd8db790f6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 25.21698
+      value: -176.51093
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13845,7 +13846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 599144726}
-  health: {fileID: 403487635}
+  damagable: {fileID: 403487635}
 --- !u!1 &2018797928
 GameObject:
   m_ObjectHideFlags: 0

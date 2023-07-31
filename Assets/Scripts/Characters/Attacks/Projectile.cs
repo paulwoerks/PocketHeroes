@@ -44,7 +44,7 @@ public class Projectile : MonoBehaviour
 
             GameObject target = hit.transform.gameObject;
             if (target.CompareTag("Enemy")){
-                target.GetComponent<Health>().TakeDamage(damage);
+                target.GetComponent<Damagable>().TakeDamage(damage);
             }
 
             Pooler.Despawn(gameObject);

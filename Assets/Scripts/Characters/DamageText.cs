@@ -3,7 +3,7 @@ using Toolbox.Pooling;
 
 public class DamageText : MonoBehaviour
 {
-    [SerializeField] Health health;
+    [SerializeField] Damagable health;
 
     [SerializeField] GameObject prefabFX;
 

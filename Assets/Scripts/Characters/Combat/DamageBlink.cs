@@ -7,7 +7,7 @@ public class DamageBlink : MonoBehaviour
     // IMPORTANT! Emission has to be enabled by default on the material
     [SerializeField] float flashTime = .15f;
     [SerializeField] Color flashColor = new Color(0.39f, 0.39f, 0.39f);
-    [SerializeField] Health health;
+    [SerializeField] Damagable health;
     [SerializeField] Renderer rend;
     bool isEmission;
     Color originalEmissionColor;

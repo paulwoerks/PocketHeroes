@@ -27,6 +27,8 @@ public class WaveManager : MonoBehaviour
     bool IsTimeLimit => waveTimer > 0f;
     [SerializeField] int waveTime = 20;
 
+    [SerializeField] float spawnInterval = 1.5f;
+
     bool waveActive;
 
     [Header("Listening to ...")]
@@ -65,12 +67,13 @@ public class WaveManager : MonoBehaviour
     IEnumerator RunWave(){
         while (waveTimer > 0f){
             spawner.Spawn(prefab);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(spawnInterval);
         }
     }
 
     void StopWave(){
         waveActive = false;
+        StopAllCoroutines();
         waveTimer = 0f;
         spawner.DespawnAll();
         OnWaveEnd?.Invoke();

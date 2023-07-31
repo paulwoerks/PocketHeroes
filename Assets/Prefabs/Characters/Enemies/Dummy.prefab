@@ -54,12 +54,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ca217fc7b9ea20408ed24d1616f2ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  BaseStats: {fileID: 11400000, guid: b39b96dec97d8c84e9d904305212b18f, type: 2}
+  statistics: {fileID: 11400000, guid: 17acdd7bb66e98f42b1bcbdc1369b980, type: 2}
+  damagable: {fileID: 8643583977433778895}
+  animator: {fileID: 6624712291293634071}
   deathFX: {fileID: 1779529582435832835, guid: 387eb780143885141af648086648e03f, type: 3}
   coin: {fileID: 4091947844307468653, guid: 545ac6e08b522c940a9b192714770bac, type: 3}
   target: {fileID: 11400000, guid: bba6c042b08ad2046b172d4933d91d02, type: 2}
-  animator: {fileID: 6624712291293634071}
-  gameStatistics: {fileID: 11400000, guid: 17acdd7bb66e98f42b1bcbdc1369b980, type: 2}
 --- !u!114 &8643583977433778895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,7 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
-  maxHP: 3
+  stats: {fileID: 867273403687754400}
   hp: 3
 --- !u!114 &3246484085891489402
 MonoBehaviour:

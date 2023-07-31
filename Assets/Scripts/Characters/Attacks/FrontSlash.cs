@@ -44,7 +44,7 @@ public class FrontSlash : MonoBehaviour
         Pooler.Spawn(VFX, transform.position, transform.rotation);
 
         foreach (GameObject enemy in inRange){
-            enemy.GetComponent<Health>().TakeDamage(damage);
+            enemy.GetComponent<Damagable>().TakeDamage(damage);
         }
     }
 

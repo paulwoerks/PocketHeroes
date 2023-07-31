@@ -8,7 +8,7 @@ public class DummyAttack : MonoBehaviour
     [SerializeField] float attackRange = 0.5f;
     [SerializeField] float cooldown = 2f;
     [SerializeField] TransformAnchor playerAnchor;
-    Health playerHealth;
+    Damagable playerHealth;
 
     bool canAttack;
 
@@ -31,7 +31,7 @@ public class DummyAttack : MonoBehaviour
             return;
             
         if (Vector3.Distance(playerAnchor.Value.position, transform.position) <= attackRange){
-            playerAnchor.Value.GetComponent<Health>().TakeDamage(damage);
+            playerAnchor.Value.GetComponent<Damagable>().TakeDamage(damage);
             canAttack = false;
             StartCoroutine(Cooldown());
         }

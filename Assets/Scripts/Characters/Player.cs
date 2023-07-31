@@ -3,21 +3,18 @@ using Toolbox;
 using Toolbox.Events;
 using System;
 
-public class Player : MonoBehaviour {
-    public float moveSpeed = 3f;
+public class Player : Character {
     public float rotationSpeed = 5f;
     JoystickReader joystick;
-    [SerializeField] Animator anim;
     [SerializeField] TransformAnchor PlayerAnchor;
     public Action<bool> OnAttacking;
+
     [Header("Broadcasting on ...")]
     [SerializeField] VoidChannelSO OnPlayerDie;
-    Health health;
-    public bool IsMoving => joystick.IsPressed && !health.IsDead;
+    public bool IsMoving => joystick.IsPressed && !damagable.IsDead;
 
-    void Awake(){
-        health = GetComponent<Health>();
-
+    public override void Awake(){
+        base.Awake();
         joystick = new("Movement");
         PlayerAnchor.Provide(transform);
     }
@@ -26,16 +23,8 @@ public class Player : MonoBehaviour {
         Reset();
     }
 
-    void OnEnable(){
-        health.OnDie += Die;
-    }
-
-    void OnDisable(){
-        health.OnDie -= Die;
-    }
-
     void Update(){
-        if (!health.IsDead){
+        if (!damagable.IsDead){
             Rotate();
             Move();
 
@@ -45,11 +34,11 @@ public class Player : MonoBehaviour {
         }
         
         if (Input.GetKeyDown(KeyCode.E)){
-            if (!health.IsDead)
-                health.TakeDamage(1);
+            if (!damagable.IsDead)
+                damagable.TakeDamage(1);
             else{
                 PlayerAnchor.Provide(transform);
-                anim.SetTrigger("Revive");
+                animator.SetTrigger("Revive");
                 Reset();
             }
         }
@@ -57,10 +46,10 @@ public class Player : MonoBehaviour {
 
     void Move(){
         transform.position += transform.forward * joystick.Power
-            * moveSpeed
+            * MoveSpeed
             * Time.deltaTime;
 
-        anim?.SetBool("isMoving", IsMoving);
+        animator?.SetBool("isMoving", IsMoving);
     }
 
     void Rotate(){
@@ -72,18 +61,18 @@ public class Player : MonoBehaviour {
     }
 
     void Attack(){
-        anim?.SetTrigger("Attack_Strike");
+        animator?.SetTrigger("Attack_Strike");
     }
 
-    void Die(){
-        anim?.SetTrigger("Die");
+    public override void Die(){
+        base.Die();
         PlayerAnchor.Unset();
         OnAttacking?.Invoke(false);
         OnPlayerDie.Invoke();
     }
 
-    void Reset(){
-        health.Reset();
+    public override void Reset(){
+        base.Reset();
         OnAttacking?.Invoke(true);
     }
 }
